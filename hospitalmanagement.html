@@ -1,0 +1,93 @@
+<html>
+<head>
+    <title>Hospital Management System</title>
+ 
+    
+<body>
+   <script src="script.js"></script> 
+</body>
+
+
+
+<body>
+    <header>
+        <h2>Hospital Management System</h2>
+    </header>
+
+    <nav>
+        
+        <a href="#">Home</a>
+        <a href="#">Patients</a>
+       <a  href="#" onclick="appointment()"  id="app1">Appointments</a>
+        <a href="#">Billing</a>
+        <a href="#">Contact</a>
+        <a href="#" onclick="drportfolia()">drportfolia</a>
+
+        
+        
+    </nav>
+ 
+
+
+
+
+    <section class="hero">
+        <h1>Welcome to Our Digital Hospital System</h1>
+        <p>
+            This system reduces paperwork and improves accuracy by digitizing
+            patient records, appointments, and billing in a simple web-based platform.
+        </p>
+        <a href="#" class="btn">Get Started</a>
+    </section>
+
+    <footer>
+        2026 Hospital Management System | All Rights Reserved
+    </footer>
+
+
+
+
+    <title>Floating Appointment Button</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>Centers of Excellence</h1>
+    <p>Scroll down to see floating button...</p>
+    <div style="height:1500px;"></div>
+
+    <!-- Floating Button -->
+    <div class="floating-btn" onclick="openForm()">
+         Book an Appointment
+    </div>
+    <div class="floating-btn2" onclick="emergence()">
+       emergence booking 
+
+    </div>
+
+
+
+
+
+    <!-- Appointment Form Popup -->
+    <div class="form-popup" id="appointmentForm">
+        <div class="form-container">
+            <h2>Appointment Form</h2>
+            <input type="text" placeholder="Enter Name" required>
+            <input type="email" placeholder="Enter Email" required>
+            <input type="date" required>
+            <select>
+                <option>select department</option>
+                <option>Gynaecologist</option>
+                <option>Cardiology</option>
+            </select>
+            <button type="submit">Submit</button>
+            <button type="button" class="close-btn" onclick="closeForm()">Close</button>
+        </div>
+    </div>
+
+<script src="script.js"></script>
+</body>
+</html>
+</body>
+</html>
