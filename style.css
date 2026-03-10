@@ -148,3 +148,142 @@ button:hover {
     margin-top: 10px;
     font-weight: bold;
 }
+
+
+
+
+
+/* home page css implmentatin*/
+/* General Page Style */
+
+body{
+font-family: Arial, sans-serif;
+margin:0;
+background:#f4f6f9;
+}
+
+
+/* Header */
+
+header{
+background:#2c3e50;
+color:white;
+padding:15px;
+text-align:center;
+}
+
+
+/* Navigation Bar */
+
+nav{
+background:#34495e;
+padding:10px;
+text-align:center;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+margin:0 15px;
+font-size:18px;
+}
+
+nav a:hover{
+color:#1abc9c;
+}
+
+
+/* Hero Section */
+
+.hero{
+text-align:center;
+padding:60px;
+background:linear-gradient(to right,#4facfe,#00f2fe);
+color:white;
+}
+
+.hero h1{
+font-size:36px;
+}
+
+.hero p{
+font-size:18px;
+margin-top:10px;
+}
+
+.btn{
+display:inline-block;
+margin-top:20px;
+padding:10px 20px;
+background:white;
+color:#333;
+text-decoration:none;
+border-radius:5px;
+font-weight:bold;
+}
+
+
+/* Popup Form */
+
+.form-popup{
+display:none;
+position:fixed;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+background:white;
+padding:20px;
+box-shadow:0 0 15px gray;
+border-radius:10px;
+}
+
+.form-container input,
+.form-container select{
+width:100%;
+padding:10px;
+margin:10px 0;
+border:1px solid #ccc;
+border-radius:5px;
+}
+
+.form-container button{
+padding:10px;
+background:#3498db;
+border:none;
+color:white;
+border-radius:5px;
+cursor:pointer;
+}
+
+.close-btn{
+background:#e74c3c;
+}
+
+
+/* Doctor Section */
+
+.form-container{
+text-align:center;
+margin-top:40px;
+}
+
+.form-container img{
+border-radius:10px;
+cursor:pointer;
+transition:0.3s;
+}
+
+.form-container img:hover{
+transform:scale(1.1);
+}
+
+
+/* Footer */
+
+footer{
+background:#2c3e50;
+color:white;
+text-align:center;
+padding:15px;
+margin-top:40px;
+}
