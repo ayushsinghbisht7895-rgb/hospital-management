@@ -1,0 +1,94 @@
+
+<style>
+
+body{
+    margin:0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg,#1e90ff,#00c6ff);
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.login-container{
+    background: rgba(255,255,255,0.95);
+    padding:35px;
+    width:320px;
+    border-radius:15px;
+    text-align:center;
+    box-shadow:0 10px 25px rgba(0,0,0,0.2);
+}
+
+.login-container img{
+    width:60px;
+    margin-bottom:10px;
+}
+
+.login-container h2{
+    margin-bottom:20px;
+}
+
+input{
+    width:100%;
+    padding:10px;
+    margin:10px 0;
+    border-radius:8px;
+    border:1px solid #ccc;
+    font-size:14px;
+}
+
+input:focus{
+    border-color:#1e90ff;
+    outline:none;
+}
+
+button{
+    width:100%;
+    padding:10px;
+    border:none;
+    background:#1e90ff;
+    color:white;
+    font-size:16px;
+    border-radius:8px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+button:hover{
+    background:#0066cc;
+    transform:scale(1.03);
+}
+
+#msg{
+    margin-top:10px;
+    color:red;
+    font-size:14px;
+}
+
+</style>
+<title>Patient Register</title>
+</head>
+
+<body>
+
+<h2>Patient Registration</h2>
+
+<input type="text" id="name" placeholder="Enter Name">
+<br><br>
+
+<input type="email" id="email" placeholder="Enter Email">
+<br><br>
+
+<input type="password" id="password" placeholder="Create Password">
+<br><br>
+
+<button onclick="patientregistration()">Register</button>
+
+
+
+
+<script src="script.js"></script>
+
+</body>
+</html> 

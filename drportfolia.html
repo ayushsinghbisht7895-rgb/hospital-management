@@ -1,55 +1,89 @@
 
 <style>
-    body{
 
-        background-color: rgb(252, 254, 255);
-    }
-    p {
-  font-size: 20px;
-  opacity: 0;
-  animation: fadeIn 3s forwards;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color:rgb(27, 20, 8)
+body{
+font-family:Arial;
+background:#f4f6f9;
+text-align:center;
 }
 
-nav{
-color: gold;
-margin: 80px;
-font-size: 30px;
-size: 10px;
-
-}
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 2;
-  }
+.container{
+display:flex;
+justify-content:center;
+gap:30px;
+flex-wrap:wrap;
+margin-top:40px;
 }
 
-div{
-    margin: 10px;
-    border: 20px ;
+.doctor-card{
+background:white;
+padding:15px;
+border-radius:10px;
+box-shadow:0 0 10px gray;
+width:200px;
+}
+
+.doctor-card img{
+width:100%;
+border-radius:10px;
+cursor:pointer;
+}
+
+.doctor-card img:hover{
+transform:scale(1.05);
+transition:0.3s;
 }
 </style>
-<html>
-    
-    <body>
+<body>
 
-</center>
+<h2>Our Doctors</h2>
 
+<div class="container">
 
-<div >DR PORTFOLIO</div>
-<center>
-<nav>
-    <a href="#"  onclick="Gynaecologist()" >Gynaecologist</a>
-    </center>
-    <center>
-    
-</nav>
-<p>THIS IS OUR DR PORTFOLIO THAT TELLS YOU HOW QUALIFIED OR EXEPERIENCED ARE DR IS:</p>
+<div class="doctor-card">
+<a href="appointment.html">
+<img src="https://cdn-icons-png.flaticon.com/512/3774/3774299.png">
+</a>
+<h3>Dr. Sharma</h3>
+<p>Cardiologist</p>
+</div>
 
+<div class="doctor-card">
+<a href="appointment.html">
+<img src="https://cdn-icons-png.flaticon.com/512/3774/3774299.png">
+</a>
+<h3>Dr. Verma</h3>
+<p>Dentist</p>
+</div>
+
+<div class="doctor-card">
+<a href="appointment.html">
+<img src="https://cdn-icons-png.flaticon.com/512/3774/3774299.png">
+</a>
+<h3>Dr. Singh</h3>
+<p>Neurologist</p>
+</div>
+
+<div class="doctor-card">
+<a href="appointment.html">
+<img src="https://cdn-icons-png.flaticon.com/512/3774/3774299.png">
+</a>
+<h3>Dr. Gupta</h3>
+<p>Orthopedic</p>
+</div>
+
+<div class="doctor-card">
+  <a href="Gynaecologist.html">
+<img src="https://altrus.healthcare/wp-content/uploads/2025/06/DSC00357-Photoroom.png">
+
+  </a>
+  <h3>Dr.harsha V Reddy</h3>
+  <p>Gynaecologist</p>
+</div>
+</div>
+
+</body>
+</html>
 
 <script src="script.js"></script> 
 

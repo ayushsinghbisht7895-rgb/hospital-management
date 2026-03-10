@@ -1,0 +1,258 @@
+
+<html>
+    <head>
+        <link rel="stylesheet" href="ss.css"/>
+        <title>hello</title>
+    </head>
+<body>
+<div id="box">
+<div id="cvr">
+
+    
+  <div class="log">
+       <h1>Login</h1>
+       <div class="input-box">
+    <input type="text" class="name" placeholder="Username">
+    <img src="user.svg" class="icon-right">
+</div>
+
+<div class="input-box">
+    <input type="password" class="password" placeholder="Password">
+    <img src="pass.svg" class="icon-right">
+</div>
+
+
+       <label>
+      <input type="checkbox" style="color:white;" class="remember">Remember me</label><br>
+
+      <div class="bottom">
+       <button class="btn2">Login</button>
+       <button class="btn2">Register</button>
+      </div> 
+             <label style="color:white;">
+
+  </div>
+</div>
+</div>
+    
+
+
+<script src="script.js"></script>
+</body>
+</html>
+
+
+
+<style>
+
+#box{ 
+    background-image: url("doc(log).jpg");
+   background-size: cover;
+background-position: center;
+    width:100%;
+    height:100vh;
+    background-color:rgb(0, 0, 0);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:120px;
+}
+#cvr{
+       display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100%;
+    width:100%;
+    backdrop-filter: blur(2px);
+}
+
+.btn1{
+background-color:rgb(255, 255, 255);
+width:70px;
+height:27px;
+font: 15.8px rgba(47, 0, 255, 0.925);
+border-radius:5px;
+box-shadow: inset 2px 2px 3px rgba(47, 0, 255, 0.925);
+cursor:pointer;
+position: relative;
+  overflow: hidden;
+   z-index: 1;
+    transition: all 0.35s ease;
+}
+
+.btn1::before{
+    content: " ";
+    width:100%;
+    height:100%;
+    background:rgba(136, 255, 0, 0.502);
+    position: absolute;
+    top:0;
+    left:0;
+    z-index: -1;
+    transform:translateX(-99%);
+    transition: .5s all ease;
+   
+}
+
+.btn1:hover::before{
+transform: translate(100%);
+}
+.btn1:hover{
+background-color: rgba(255, 255, 255, 0.97);
+color: rgb(0, 0, 0);
+border-color:rgb(0, 0, 0);
+transform:scale(1.1);
+}
+
+
+.btn2{
+   background-color:#1876f29b;
+width:70px;
+height:27px;
+font: 15.8px;
+color: white;
+font-weight:bold;
+border-radius:5px;
+box-shadow: inset 2px 2px 3px rgba(255, 255, 255, 0.925);
+cursor:pointer;
+position: relative;
+  overflow: hidden;
+   z-index: 1;
+    transition: all 0.35s ease;
+    border-color:#1876f29b;
+}
+
+.btn2::after{
+    content:" ";
+    height:100%;
+    width:100%;
+    background:#1876f29b;
+    transform:translateX(-100%);
+    z-index:-1;
+    position:absolute;
+    top:0;
+    left:0;
+  transition:1s all ease;
+  color: white;
+}
+.btn2::before{
+content:" ";
+height:100%;
+width:100%;
+background:#1876f29b;
+position:absolute;
+top:0;
+left:0;
+transform:translateX(100%);
+transition:1s all ease;
+z-index:-1;
+color: white;
+}
+
+.btn2:hover::after{
+transform:scale(1.1);
+color: white;
+}
+.btn2:hover::before{
+transform:scale(1.1);
+color: white;
+}
+.btn2:hover{
+    background-color: rgba(255, 255, 255, 0.97);
+color: rgb(0, 0, 0);
+border-color:rgb(0, 0, 0);
+transform:scale(1.05);
+color: white;
+}
+
+
+
+
+
+
+
+
+
+
+.log{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction:column;
+height:400px;
+width:300px;
+border: 1px solid rgba(255,255,255,0.2);
+background-color:rgba(255, 255, 255, 0.254);
+border-radius:  20px;
+box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+backdrop-filter: blur(15px);
+transition: .5s all ease;
+}
+
+
+.bottom{
+  display:flex;
+    gap: 50px;
+    transition: .5s all ease;
+}
+
+.name{
+border-radius:5px;
+border-color:white;
+width:250px;
+height:30px;
+transition: .5s all ease;
+}
+.password{
+border-radius:5px;
+border-color:white;
+width:250px;
+height:30px;
+transition: .5s all ease;
+}
+
+.log:hover{
+    transform: scale(1.05);
+}
+.name:hover{
+transform: scale(1.07);
+}
+.password:hover{
+transform: scale(1.07);
+}
+
+.input-box {
+    position: relative;
+    width: 250px; 
+    margin-bottom: 15px;
+    transition: .5s all ease;
+}
+
+.input-box input {
+    width: 100%;
+    padding-right: 30px; 
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: 1px solid white;
+    height: 30px;
+    transition: .5s all ease;
+}
+
+.input-box .icon-right {
+    position: absolute;
+    right: 8px;      
+    top: 50%;
+    transform: translateY(-50%);
+    width: 16px;     
+    height: 16px;     
+    pointer-events: none;
+    transition: .5s all ease;
+}
+
+.input-box:hover{
+transform: scale(1.07);
+}
+.icon-right:hover{
+transform: scale(1.07);
+}
+</style>
