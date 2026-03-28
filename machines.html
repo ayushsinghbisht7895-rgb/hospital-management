@@ -1,99 +1,175 @@
-
 <html>
-
 <head>
 <title>Our Machines</title>
 
 <style>
+
+body{
+  background-image: url("https://images.unsplash.com/photo-1586773860418-d37222d8fce3");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  font-family: Arial;
+}
+
+/* main slider container */
+.slider-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+/* scrollable machine container */
 .machine-container{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
-gap:25px;
-padding:30px;
-text-align:center;
+  display: flex;
+  gap: 25px;
+  padding: 30px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  width: 80%;
+  border-radius: 15px;
+  background: rgba(255,255,255,0.2);
+}
+
+/* hide scrollbar */
+.machine-container::-webkit-scrollbar{
+  display: none;
 }
 
 .machine-card{
-background:white;
-padding:20px;
-border-radius:10px;
-box-shadow:0 0 10px rgba(0,0,0,0.1);
+  background: rgba(255,255,255,0.9);
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  min-width: 200px;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.machine-card:hover{
+  transform: translateY(-10px);
 }
 
 .machine-card img{
-width:100px;
-transition:0.3s;
+  width: 200px;
+  border-radius: 10px;
+  transition: 0.3s;
 }
 
 .machine-card img:hover{
-transform:scale(1.1);
+  transform: scale(2.2);
 }
 
 .machine-card p{
-font-weight:bold;
-margin-top:10px;
+  font-weight: bold;
+  margin-top: 10px;
 }
-</style>
 
+/* arrow buttons */
+.arrow-btn{
+  background: rgba(0,0,0,0.7);
+  color: white;
+  border: none;
+  font-size: 25px;
+  padding: 15px 20px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.arrow-btn:hover{
+  background: black;
+  transform: scale(1.1);
+}
+
+</style>
 </head>
 
 <body>
 
-<h2>Our Medical Machines</h2>
+<center>
+<h1 style="color:rgb(21, 5, 5);">Our Medical Machines</h1>
+</center>
 
-<div class="machine-container">
+<div class="slider-container">
+
+  <!-- Left Button -->
+  
+<button class="arrow-btn" onclick="moveLeft()">&#10094;</button>
+  <!-- Cards -->
+  <div class="machine-container" id="machineSlider">
+
+    <div class="machine-card">
+      <img src="https://imgs.search.brave.com/xKnuA2NSwmS_A-xBYhcWuCsHscwgzHyZeZTjf9gJp-0/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90My5m/dGNkbi5uZXQvanBn/LzAxLzc2LzY1LzA4/LzM2MF9GXzE3NjY1/MDgzOF9NUXFGQXJJ/R1NrSzRxNFNkWHdo/Y2hxN01CTFd1R0Fm/Uy5qcGc">
+      <p>Da Vinci Surgical Robot</p>
+    </div>
+
+    <div class="machine-card">
+      <img src="https://imgs.search.brave.com/OJkibZDv7XFuD-eChGnx2mXBLPu0XgTnxf1TWwPyRVk/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90My5m/dGNkbi5uZXQvanBn/LzE4LzMzLzgxLzU4/LzM2MF9GXzE4MzM4/MTU4OTBfbGI2Y0Ju/ZHd3cElyR08xMG82/amFDY2F1eXV0elV4/VmcuanBn">
+      <p>MRI Scanner</p>
+    </div>
+
+    <div class="machine-card">
+      <img src="https://imgs.search.brave.com/4LQmouQkHPR9AItmoxZllDCKsb5ZUQIxhQSRkizV7LE/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90NC5m/dGNkbi5uZXQvanBn/LzE2Lzc3LzcwLzk1/LzM2MF9GXzE2Nzc3/MDk1NDJfYWVzZGQy/Q0RSMmZmVlJFTk9j/N2RvRVZORVA0clhN/dFEuanBn">
+      <p>X-Ray Machine</p>
+    </div>
+
+    <div class="machine-card">
+      <img src="https://as2.ftcdn.net/v2/jpg/03/08/46/97/1000_F_308469705_rgOUGsUmmpQLqf40bHIWXc2bxQZPM8b3.jpg">
+      <p>Ultrasound Machine</p>
+    </div>
+
+    <div class="machine-card">
+      <img src="https://as1.ftcdn.net/v2/jpg/05/88/91/12/1000_F_588911234_2a6Z35b7X16Fwk0typPyeeZHCMkDA34O.jpg">
+      <p>ECG Machine</p>
+    </div>
+
+    <div class="machine-card">
+      <img src="https://as2.ftcdn.net/v2/jpg/11/27/79/45/1000_F_1127794518_qG0v8MQJyZPc4H0NlLmhpYCyl62LNgcU.jpg">
+      <p>CT Scan Machine</p>
+    </div>
+
+    <div class="machine-card">
+      <img src="https://as1.ftcdn.net/v2/jpg/01/29/57/98/1000_F_129579836_pU2kUVD8vC7rpsC0aO2gUvHGgQBwKrOz.jpg">
+      <p>Defibrillator</p>
+    </div>
+
+    <div class="machine-card">
+      <img src="https://as2.ftcdn.net/v2/jpg/04/07/46/97/1000_F_407469754_ZJt9g1ORiD14n0ErLLc7lMvdxy4rOZMo.jpg">
+      <p>Ventilator</p>
+    </div>
+
+  </div>
+
+  <!-- Right Button -->
 
 
+<button class="arrow-btn" onclick="moveRight()">&#10095;</button>
 
-    
-<div class="machine-card">
-<img src="https://imgs.search.brave.com/xKnuA2NSwmS_A-xBYhcWuCsHscwgzHyZeZTjf9gJp-0/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90My5m/dGNkbi5uZXQvanBn/LzAxLzc2LzY1LzA4/LzM2MF9GXzE3NjY1/MDgzOF9NUXFGQXJJ/R1NrSzRxNFNkWHdo/Y2hxN01CTFd1R0Fm/Uy5qcGc">
-<p>da vinci surgical robot</p>
 </div>
 
-<div class="machine-card">
-<img src="https://img.icons8.com/color/480/mri.png">
-<p>MRI Scanner</p>
-</div>
+<script>
 
-<div class="machine-card">
-<img src="https://img.icons8.com/color/480/x-ray.png">
-<p>X-Ray Machine</p>
-</div>
+let slider = document.getElementById("machineSlider");
 
-<div class="machine-card">
-<img src="https://img.icons8.com/color/480/ultrasound.png">
-<p>Ultrasound Machine</p>
-</div>
+function moveLeft(){
+  slider.scrollBy({
+    left: -300,
+    behavior: "smooth"
+  });
+}
 
-<div class="machine-card">
-<img src="https://img.icons8.com/color/480/heart-monitor.png">
-<p>ECG Machine</p>
-</div>
-
-<div class="machine-card">
-<img src="https://img.icons8.com/color/480/ct-scan.png">
-<p>CT Scan Machine</p>
-</div>
-
-<div class="machine-card">
-<img src="https://img.icons8.com/color/480/defibrillator.png">
-<p>Defibrillator</p>
-</div>
-
-<div class="machine-card">
-<img src="https://img.icons8.com/color/480/ventilator.png">
-<p>Ventilator</p>
-</div>
-
-<div class="machine-card">
-<img src="https://img.icons8.com/color/480/blood-test.png">
-<p>Blood Analyzer</p>
-</div>
-
-</div>
-
-<script src="script.js"></script>
+function moveRight(){
+  slider.scrollBy({
+    left: 300,
+    behavior: "smooth"
+  });
+}
+</script>
+</script>
 
 </body>
 </html>

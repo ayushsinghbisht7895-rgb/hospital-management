@@ -1,117 +1,102 @@
-
 <html>
-<head>
-<title>Hospital Management System</title>
-
-<link rel="stylesheet" href="style.css">
-
-</head>
-
 <body>
+<head>
+  <link rel="stylesheet" href="style.css">
+</head>
+  <div class="clock">Loading...</div>
 
-<header>
-<h2>Hospital Management System</h2>
-</header>
+  <header>
+    <h2>Hospital Management System</h2>
 
-<nav>
-<a href="#">Home</a>
-<a href="patientregistration.html">Register</a>
-<a href="#" onclick="appointment()" id="app1">Appointments</a>
-<a href="#">Billing</a>
-<a href="#">Contact</a>
-<a href="#" onclick="drportfolia()">Dr Portfolio</a>
-</nav>
+    <nav class="navbar">
+      <div class="logo">
+        <img src="WhatsApp Image 2026-03-14 at 10.46.43 PM.jpeg" alt="Logo">
+      </div>
 
+      <a href="#">Home</a>
 
+      <a href="#" onclick="appointment()">Appointments</a>
+      <a href="billing.html">Billing</a>
+      <a href="contact.html">Contact</a>
+      <a href="#" onclick="drportfolia()">Dr Portfolio</a>
+    </nav>
+  </header>
 
-<section class="hero">
-<h1>Welcome to Our Digital Hospital System</h1>
-<p>
-This system reduces paperwork and improves accuracy by digitizing
-patient records, appointments, and billing in a simple web-based platform.
-</p>
-<a href="#" class="btn">Get Started</a>
-</section>
+  <!-- VIDEO SECTION -->
+  <div class="video-container">
+    <video autoplay muted loop>
+      <source src="18980986-uhd_3840_2160_30fps.mp4" type="video/mp4">
+    </video>
 
+    <div class="overlay"></div>
 
+    <section class="hero">
+      <h1>Welcome to Our Digital Hospital System</h1>
+      <p>
+        This system reduces paperwork and improves accuracy by digitizing
+        patient records, appointments, and billing in a simple web-based platform.
+      </p>
+      <a href="#" class="btn">Get Started</a>
+    </section>
+  </div>
 
+  <!-- Emergency Button -->
+  <div class="floating-btn2" onclick="emergence()">
+    Emergency Booking
+  </div>
 
-<div class="floating-btn" onclick="openForm()">
-Book an Appointment
-</div>
+  <!-- SERVICES -->
+  <section class="services">
 
-<div class="floating-btn2" onclick="emergence()">
-Emergency Booking
-</div>
+    <div class="form-container">
+      <h3>Our Doctors</h3>
+      <a href="drportfolia.html">
+        <img src="https://img.icons8.com/?size=160&id=0WWwdtiSb6xB&format=png">
+      </a>
+    </div>
 
+    <div class="form-container">
+      <h3>Our Machines</h3>
+      <a href="machines.html">
+        <img src="https://cdn.iconscout.com/icon/premium/png-512-thumb/mri-machine-icon-svg-download-png-12228989.png?f=webp&w=512">
+      </a>
+    </div>
 
+    <div class="form-container">
+      <h3>Our Department</h3>
+      <a href="Department.html">
+        <img src="https://img.icons8.com/?size=160&id=0WeAgenmoZYs&format=png">
+      </a>
+    </div>
 
-<div class="form-popup" id="appointmentForm">
+  </section>
 
-<div class="form-container">
-
-<h2>Appointment Form</h2>
-
-<input type="text" placeholder="Enter Name" required>
-
-<input type="email" placeholder="Enter Email" required>
-
-<input type="date" required>
-
-<select>
-<option>Select Department</option>
-<option>Gynaecologist</option>
-<option>Cardiology</option>
-</select>
-
-<button type="submit">Submit</button>
-
-<button type="button" class="close-btn" onclick="closeForm()">Close</button>
-
-</div>
-
-</div>
-
-
-
-<div class="form-container">
-
-<h3>OUR DOCTORS</h3>
-
-<a href="drportfolia.html">
-
-<img src="https://img.icons8.com/?size=160&id=0WWwdtiSb6xB&format=png" width="150">
-
-</a>
-
-</div>
+  <section class="feedback">
+    <h1>Feedback</h1>
+    <textarea placeholder="Write your feedback here..."></textarea>
+  </section>
+        
+  <footer>
+    2026 Hospital Management System | All Rights Reserved
+  </footer>
 
 
-<div class="form-container">
+  <script>
+    setInterval(() => {
+      let clock = new Date();
+      let h = clock.getHours();
+      let m = clock.getMinutes();
+      let s = clock.getSeconds();
+      let d = clock.getDate();
+      let mo = clock.getMonth() + 1;
+      let y = clock.getFullYear();
 
-<h3>Our Machines</h3>
+      document.getElementsByClassName('clock')[0].innerHTML =
+        h + ":" + m + ":" + s + " | Date: " + d + "/" + mo + "/" + y;
+    }, 1000);
+  </script>
 
-<a href="machines.html">
-<img src="https://cdn.iconscout.com/icon/premium/png-512-thumb/mri-machine-icon-svg-download-png-12228989.png?f=webp&w=512" width="150">
-</a>
-
-</div>
-
-<div class="form-container">
-
-    <h3>our Department</h3>
-
-    <a href="Department.html">
-    <img src="https://img.icons8.com/?size=160&id=0WeAgenmoZYs&format=png"width="150">
-   </a>
-</div>
-
-</div>
-<footer>
-2026 Hospital Management System | All Rights Reserved
-</footer>
 
 <script src="script.js"></script>
-
 </body>
 </html>

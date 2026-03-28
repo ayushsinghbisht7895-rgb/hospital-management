@@ -1,0 +1,80 @@
+<html>
+<head>
+<title>Hospital Billing</title>
+
+<style>
+
+body{
+font-family:Arial;
+background:#f4f6f9;
+text-align:center;
+}
+
+.bill-container{
+background:white;
+padding:30px;
+width:350px;
+margin:auto;
+margin-top:40px;
+border-radius:10px;
+box-shadow:0 0 10px gray;
+}
+
+input{
+width:90%;
+padding:10px;
+margin:6px;
+border-radius:5px;
+border:1px solid gray;
+}
+
+button{
+padding:10px 15px;
+margin:10px;
+background:#3498db;
+color:white;
+border:none;
+border-radius:5px;
+cursor:pointer;
+}
+
+button:hover{
+background:#2980b9;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h2>Hospital Billing System</h2>
+
+<div class="bill-container">
+
+<input type="text" id="patientId" placeholder="Patient ID"><br>
+
+<input type="text" id="pname" placeholder="Patient Name"><br>
+
+<input type="date" id="date"><br>
+
+<input type="number" id="consultation" placeholder="Consultation Fee"><br>
+
+<input type="number" id="medicine" placeholder="Medicine Cost"><br>
+
+<input type="number" id="lab" placeholder="Lab Test Cost"><br>
+
+<input type="number" id="room" placeholder="Room Charges"><br>
+
+<button onclick="generateBill()">Generate Bill</button>
+
+<button onclick="printBill()">Print Bill</button>
+
+<h3 id="billOutput"></h3>
+
+</div>
+
+
+<script src="script.js"></script>
+</body>
+</html>
