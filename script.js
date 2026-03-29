@@ -91,56 +91,170 @@ function printBill(){
 window.print();
 }
 
-function bookAppointment(){
+ function bookAppointment(){
 
-let name = document.getElementById("name").value.trim();
-let date = document.getElementById("date").value.trim();
-let doctor = document.getElementById("doctor").value.trim();
-let time = document.getElementById("time").value.trim();
-let priority = document.getElementById("priority").value.trim();
+      let name = document.getElementById("pname").value;
+      let date = document.getElementById("date").value;
+      let doctor = document.getElementById("doctor").value;
+      let time = document.getElementById("time").value;
+      let priority = document.getElementById("priority").value;
 
-if( name==="" || date===""|| doctor===""|| time===""|| priority===""){
-  alert("all the entery are mandatory:")
-  return false;
+      if(name == ""){
+        alert("Enter Patient Name!");
+        return;
+      }
+
+      if(date == ""){
+        alert("Select Appointment Date!");
+        return;
+      }
+
+      if(doctor == "Select Doctor"){
+        alert("Select Doctor!");
+        return;
+      }
+
+      if(time == "Select Time Slot"){
+        alert("Select Time Slot!");
+        return;
+      }
+
+      let appointment = {
+        patientName: name,
+        appointmentDate: date,
+        doctorName: doctor,
+        appointmentTime: time,
+        priority: priority
+      };
+
+      let appointments = JSON.parse(localStorage.getItem("appointments")) || [];
+
+      appointments.push(appointment);
+
+      localStorage.setItem("appointments", JSON.stringify(appointments));
+
+      document.getElementById("result").innerHTML = " Appointment Saved Successfully!";
+      document.getElementById("result").style.color = "green";
+
+      loadAppointments();
+
+      document.getElementById("pname").value = "";
+      document.getElementById("date").value = "";
+      document.getElementById("doctor").value = "Select Doctor";
+      document.getElementById("time").value = "Select Time Slot";
+      document.getElementById("priority").value = "Normal";
+    }
+
+    function loadAppointments(){
+      let appointments = JSON.parse(localStorage.getItem("appointments")) || [];
+      let tableBody = document.getElementById("tableBody");
+
+      tableBody.innerHTML = "";
+
+      appointments.forEach((app, index) => {
+        tableBody.innerHTML += `
+          <tr>
+            <td>${index+1}</td>
+            <td>${app.patientName}</td>
+            <td>${app.appointmentDate}</td>
+            <td>${app.doctorName}</td>
+            <td>${app.appointmentTime}</td>
+            <td>${app.priority}</td>
+          </tr>
+        `;
+      });
+    }
+function clearAppointments(){
+
+  let pass = prompt("Enter Admin Password to Clear Appointments:");
+
+  if(pass === "lifesaver"){  
+    localStorage.removeItem("appointments");
+    document.getElementById("tableBody").innerHTML = "";
+    document.getElementById("result").innerHTML = " All appointments cleared by Admin!";
+    document.getElementById("result").style.color = "green";
+  }
+  else{
+    alert(" Wrong Password! Only Admin can clear appointments.");
+  }
 }
 
-let appointmentId = "APT" + Math.floor(Math.random()*1000);
+    window.onload = loadAppointments;
+    function bookAppointment(){
 
+  let name = document.getElementById("pname").value;
+  let date = document.getElementById("date").value;
+  let doctor = document.getElementById("doctor").value;
+  let time = document.getElementById("time").value;
+  let priority = document.getElementById("priority").value;
 
+  if(name == ""){
+    alert("Enter Patient Name!");
+    return;
+  }
 
-let room = Math.floor(Math.random()*100)+1;
+  if(date == ""){
+    alert("Select Appointment Date!");
+    return;
+  }
 
+  if(doctor == "Select Doctor"){
+    alert("Select Doctor!");
+    return;
+  }
 
+  if(time == "Select Time Slot"){
+    alert("Select Time Slot!");
+    return;
+  }
 
-let floor = Math.ceil(room/10);
+  let appointments = JSON.parse(localStorage.getItem("appointments")) || [];
 
+  // Check Duplicate Appointment (same doctor + date + time)
+  let alreadyBooked = appointments.find(app =>
+    app.doctorName === doctor &&
+    app.appointmentDate === date &&
+    app.appointmentTime === time
+  );
 
-let appointment = {
-id:appointmentId,
-name:name,
-date:date,
-doctor:doctor,
-time:time,
-priority:priority,
-room:room,
-floor:floor
-};
+  if(alreadyBooked){
+    alert(" This Doctor is already booked at this Date & Time. Please select another slot!");
+    return;
+  }
 
+ 
+  let token = appointments.length + 1;
 
+  let appointment = {
+    tokenNumber: token,
+    patientName: name,
+    appointmentDate: date,
+    doctorName: doctor,
+    appointmentTime: time,
+    priority: priority
+  };
 
+  appointments.push(appointment);
 
+  localStorage.setItem("appointments", JSON.stringify(appointments));
 
-showAppointments();
+  document.getElementById("result").innerHTML =
+    " Appointment Booked Successfully! <br>  Token Number: <b>" + token + "</b>";
 
+  document.getElementById("result").style.color = "green";
+
+  loadAppointments();
+
+  // Clear Inputs
+  document.getElementById("pname").value = "";
+  document.getElementById("date").value = "";
+  document.getElementById("doctor").value = "Select Doctor";
+  document.getElementById("time").value = "Select Time Slot";
+  document.getElementById("priority").value = "Normal";
 }
+  
+  
 
 
-
-
-
-
-showAppointments();
-
-
-
+ 
 
